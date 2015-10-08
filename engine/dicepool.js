@@ -21,7 +21,7 @@ DicePool.prototype.roll = function() {
     var outcome = { 
         successes:[], failures:[], 
         boons:[], banes:[], 
-        chaosStar:[], comeets:[],
+        chaosStar:[], comets:[],
         delays:[] 
     }
     var successes = outcome.successes
