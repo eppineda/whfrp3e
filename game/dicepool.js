@@ -21,7 +21,7 @@ DicePool.prototype.roll = function() {
     var outcome = { 
         successes:[], failures:[], 
         boons:[], banes:[], 
-        chaosStar:[], comets:[],
+        chaosStars:[], comets:[],
         delays:[] 
     }
     var successes = outcome.successes
@@ -34,11 +34,14 @@ DicePool.prototype.roll = function() {
 
     for (var d in this.dice) {
         var result = this.dice[d].roll()
-        var regex = new RegExp(result)
+        var regex = new RegExp(result.replace('+', ''))
 
-        if (regex.test(this.success.toString())) successes.push(result)
+        if (regex.test(this.success.toString()) && 'eagle' !== result) {
+            successes.push(result)
+        }
         if (regex.test(this.failure.toString())) failures.push(result)
-        if (regex.test(this.boon.toString())) boons.push(result)
+        if (regex.test(this.boon.toString()) && 'hammer' !== result && '+hammer' !== result)
+            boons.push(result)
         if (regex.test(this.bane.toString())) banes.push(result)
         if (regex.test(this.chaosStar.toString())) chaosStars.push(result)
         if (regex.test(this.sigmarsComet.toString())) comets.push(result)
