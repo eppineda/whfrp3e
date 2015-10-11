@@ -6,21 +6,14 @@ var MisfortuneDie = require('./misfortunedie')
 var ConservativeDie = require('./conservativedie')
 var ExpertiseDie = require('./expertisedie')
 var DicePool = require('./dicepool')
+var pool = new DicePool([ ChallengeDie, CharacteristicDie, RecklessDie, 
+    FortuneDie, MisfortuneDie, ConservativeDie, ExpertiseDie ])
 
-var purple = new ChallengeDie
-var blue = new CharacteristicDie
-var red = new RecklessDie
-var white = new FortuneDie
-var black = new MisfortuneDie
-var green = new ConservativeDie
-var yellow = new ExpertiseDie
-var pool = new DicePool([ purple, blue, red, white, black, green, yellow ])
-
-console.log('challenge die roll:', purple.roll())
-console.log('characteristic die roll:', blue.roll())
-console.log('reckless die roll:', red.roll())
-console.log('fortune die roll:', white.roll())
-console.log('misfortune die roll:', black.roll())
-console.log('conservative die roll:', green.roll())
-console.log('expertise die roll:', yellow.roll())
+console.log('challenge die roll:', ChallengeDie.roll())
+console.log('characteristic die roll:', CharacteristicDie.roll())
+console.log('reckless die roll:', RecklessDie.roll())
+console.log('fortune die roll:', FortuneDie.roll())
+console.log('misfortune die roll:', MisfortuneDie.roll())
+console.log('conservative die roll:', ConservativeDie.roll())
+console.log('expertise die roll:', ExpertiseDie.roll())
 console.log('rolling dice pool:', pool.roll())
