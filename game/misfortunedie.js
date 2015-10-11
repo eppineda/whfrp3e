@@ -2,17 +2,16 @@
  * Copyright (C) 2015 Enrique P. Pineda
  */
 
-function MisfortuneDie() {
-    this.color = 'purple'
-    this.sides = [
+var MisfortuneDie = {
+    color:'purple',
+    sides:[
         'blank', 'blank',
         'crossed', 'crossed',
         'blank', 'skull'
-    ]
-}
-
-MisfortuneDie.prototype.roll = function() {
-    return this.sides[Math.floor(Math.random() * this.sides.length)]
+    ],
+    roll:function() {
+        return this.sides[Math.floor(Math.random() * this.sides.length)]
+    }
 }
 
 module.exports = MisfortuneDie
