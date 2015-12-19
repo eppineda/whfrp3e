@@ -10,6 +10,7 @@ var Panel = function(screen, title, information) {
     this.position = screen.attach(this)
     this.information = information
     this.render = information.render
+    this.shared = false
 }
 
 var Screen = function() {
