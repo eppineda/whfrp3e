@@ -13,5 +13,5 @@ export class ChallengeDie extends Die {
             'skull', 'crossed'
         ])
     }
-    roll() { return super.roll() }
+    roll() { return Die.roll() }
 }

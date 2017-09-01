@@ -5,10 +5,10 @@
 exports.__esModule = true;
 var Die = /** @class */ (function () {
     function Die(color, sides) {
-        this._color = color;
-        this._sides = sides;
+        Die._color = color;
+        Die._sides = sides;
     }
-    Die.prototype.roll = function () { return this._sides[Math.floor(Math.random() * this._sides.length)]; };
+    Die.roll = function () { return Die._sides[Math.floor(Math.random() * Die._sides.length)]; };
     return Die;
 }());
 exports.Die = Die;

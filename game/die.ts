@@ -3,11 +3,11 @@
  */
 
 export class Die {
-    _color
-    _sides
+    static _color
+    static _sides
     constructor(color, sides) {
-        this._color = color
-        this._sides = sides
+        Die._color = color
+        Die._sides = sides
     }
-    roll() { return this._sides[Math.floor(Math.random() * this._sides.length)] }
+    static roll() { return Die._sides[Math.floor(Math.random() * Die._sides.length)] }
 }
