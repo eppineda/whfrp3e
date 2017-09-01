@@ -1,7 +1,6 @@
-"use strict";
-exports.__esModule = true;
-var challengedie_1 = require("./challengedie");
-var challenge = new challengedie_1.ChallengeDie();
+import { ChallengeDie } from './challengedie'
+
+let challenge = new ChallengeDie()
 /*
 var CharacteristicDie = require('./characteristicdie')
 var RecklessDie = require('./recklessdie')
@@ -10,10 +9,11 @@ var MisfortuneDie = require('./misfortunedie')
 var ConservativeDie = require('./conservativedie')
 var ExpertiseDie = require('./expertisedie')
 var DicePool = require('./dicepool')
-var pool = new DicePool([ ChallengeDie, CharacteristicDie, RecklessDie,
+var pool = new DicePool([ ChallengeDie, CharacteristicDie, RecklessDie, 
     FortuneDie, MisfortuneDie, ConservativeDie, ExpertiseDie ])
 */
-console.log('challenge die roll:', challenge.roll());
+
+console.log('challenge die roll:', challenge.roll())
 /*
 console.log('characteristic die roll:', CharacteristicDie.roll())
 console.log('reckless die roll:', RecklessDie.roll())

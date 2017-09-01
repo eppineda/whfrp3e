@@ -1,22 +1,30 @@
+"use strict";
 /**
- * Copyright (C) 2015 Enrique P. Pineda
+ * Copyright (C) 2015- 2017 Enrique P. Pineda
  */
-
-var ChallengeDie = {
-    color:'purple',
-    sides:[
-        'chaos', 'dual-crossed',
-        'blank', 'crossed', 
-        'dual-skulls', 'dual-crossed',
-        'skull', 'crossed'
-    ],
-    roll:function() {
-        return this.sides[Math.floor(Math.random() * this.sides.length)]
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+exports.__esModule = true;
+var die_1 = require("./die");
+var ChallengeDie = /** @class */ (function (_super) {
+    __extends(ChallengeDie, _super);
+    function ChallengeDie() {
+        return _super.call(this, 'purple', [
+            'chaos', 'dual-crossed',
+            'blank', 'crossed',
+            'dual-skulls', 'dual-crossed',
+            'skull', 'crossed'
+        ]) || this;
     }
-}
-
-module.exports = ChallengeDie
-
-/**
- * Copyright (C) 2015 Enrique P. Pineda
- */
+    ChallengeDie.prototype.roll = function () { return _super.prototype.roll.call(this); };
+    return ChallengeDie;
+}(die_1.Die));
+exports.ChallengeDie = ChallengeDie;
