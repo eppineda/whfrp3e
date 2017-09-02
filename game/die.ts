@@ -2,7 +2,7 @@
  * Copyright (C) 2015- 2017 Enrique P. Pineda
  */
 
-export class Die {
+export default class Die {
     static _color
     static _sides
     constructor(color, sides) {

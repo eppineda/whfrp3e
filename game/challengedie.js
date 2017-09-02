@@ -24,7 +24,7 @@ var ChallengeDie = /** @class */ (function (_super) {
             'skull', 'crossed'
         ]) || this;
     }
-    ChallengeDie.prototype.roll = function () { return die_1.Die.roll(); };
+    ChallengeDie.prototype.roll = function () { return die_1["default"].roll(); };
     return ChallengeDie;
-}(die_1.Die));
-exports.ChallengeDie = ChallengeDie;
+}(die_1["default"]));
+exports["default"] = ChallengeDie;

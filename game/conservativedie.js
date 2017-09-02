@@ -22,7 +22,7 @@ var ConservativeDie = /** @class */ (function (_super) {
             'hammer', 'hammer', 'hammer', 'hammer', 'eagle-hammer'
         ]) || this;
     }
-    ConservativeDie.prototype.roll = function () { return die_1.Die.roll(); };
+    ConservativeDie.prototype.roll = function () { return die_1["default"].roll(); };
     return ConservativeDie;
-}(die_1.Die));
-exports.ConservativeDie = ConservativeDie;
+}(die_1["default"]));
+exports["default"] = ConservativeDie;

@@ -11,4 +11,4 @@ var Die = /** @class */ (function () {
     Die.roll = function () { return Die._sides[Math.floor(Math.random() * Die._sides.length)]; };
     return Die;
 }());
-exports.Die = Die;
+exports["default"] = Die;

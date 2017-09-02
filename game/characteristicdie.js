@@ -24,7 +24,7 @@ var CharacteristicDie = /** @class */ (function (_super) {
             'eagle', 'eagle'
         ]) || this;
     }
-    CharacteristicDie.prototype.roll = function () { return die_1.Die.roll(); };
+    CharacteristicDie.prototype.roll = function () { return die_1["default"].roll(); };
     return CharacteristicDie;
-}(die_1.Die));
-exports.CharacteristicDie = CharacteristicDie;
+}(die_1["default"]));
+exports["default"] = CharacteristicDie;

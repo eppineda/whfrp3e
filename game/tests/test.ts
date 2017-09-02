@@ -1,6 +1,6 @@
-import { ChallengeDie } from '../challengedie'
-import { CharacteristicDie } from '../characteristicdie'
-import { ConservativeDie } from '../conservativedie'
+import ChallengeDie from '../challengedie'
+import CharacteristicDie from '../characteristicdie'
+import ConservativeDie from '../conservativedie'
 
 let challenge = new ChallengeDie
 let characteristic = new CharacteristicDie
