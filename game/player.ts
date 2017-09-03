@@ -14,9 +14,21 @@ export default class Player {
 
             return stats
         }
+        function randomizeCareer() {
+            var career = ''
+
+            return career
+        }
+        function initializeDicePool() {
+            var pool = []
+
+            return pool
+        }
         this._name = name
         this._race = race
+        this._career = randomizeCareer()
         this._statistics = generateStatistics()
+        this._dicepool = initializeDicePool()
     }
     get race() { return this._race }
     get name() { return this._name }
