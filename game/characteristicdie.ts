@@ -3,15 +3,13 @@
  */
 
 import Die from './die'
-
 export default class CharacteristicDie extends Die {
-    constructor() {
-        super('blue', [
-            'hammer', 'hammer',
-            'blank', 'blank', 
-            'hammer', 'hammer',
-            'eagle', 'eagle'
-        ])
-    }
-    roll() { return Die.roll() }
+    static _color = 'blue'
+    static _sides = [
+        'hammer', 'hammer',
+        'blank', 'blank', 
+        'hammer', 'hammer',
+        'eagle', 'eagle'
+    ]
+    constructor() { super(CharacteristicDie._color, CharacteristicDie._sides) }
 }

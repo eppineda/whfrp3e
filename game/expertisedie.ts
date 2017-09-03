@@ -3,14 +3,12 @@
  */
 
 import Die from './die'
-
 export default class ExpertiseDie extends Die {
-    constructor() {
-        super('yellow', [
-            'hammer', '+hammer',
-            'comet', 'eagle',
-            'blank', 'eagle'
-        ])
-    }
-    roll() { return Die.roll() }
+    static _color = 'yellow'
+    static _sides = [
+        'hammer', '+hammer',
+        'comet', 'eagle',
+        'blank', 'eagle'
+    ]
+    constructor() { super(ExpertiseDie._color, ExpertiseDie._sides) }
 }

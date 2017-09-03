@@ -3,15 +3,15 @@
  */
 
 import Die from './die'
-
 export default class ChallengeDie extends Die {
+    static _color = 'purple'
+    static _sides = [
+        'chaos', 'dual-crossed',
+        'blank', 'crossed', 
+        'dual-skulls', 'dual-crossed',
+        'skull', 'crossed'
+    ]
     constructor() {
-        super('purple', [
-            'chaos', 'dual-crossed',
-            'blank', 'crossed', 
-            'dual-skulls', 'dual-crossed',
-            'skull', 'crossed'
-        ])
+        super(ChallengeDie._color, ChallengeDie._sides)
     }
-    roll() { return Die.roll() }
 }

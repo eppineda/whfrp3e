@@ -3,13 +3,11 @@
  */
 
 import Die from './die'
-
 export default class ConservativeDie extends Die {
-    constructor() {
-        super('green', [
-            'blank', 'eagle', 'eagle', 'hourglass-hammer', 'hourglass-hammer',
-            'hammer', 'hammer', 'hammer', 'hammer', 'eagle-hammer'
-        ])
-    }
-    roll() { return Die.roll() }
+    static _color = 'green'
+    static _sides = [
+        'blank', 'eagle', 'eagle', 'hourglass-hammer', 'hourglass-hammer',
+        'hammer', 'hammer', 'hammer', 'hammer', 'eagle-hammer'
+    ]
+    constructor() { super(ConservativeDie._color, ConservativeDie._sides) }
 }
