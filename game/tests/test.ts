@@ -2,6 +2,7 @@ import ChallengeDie from '../challengedie'
 import CharacteristicDie from '../characteristicdie'
 import ConservativeDie from '../conservativedie'
 import ExpertiseDie from '../expertisedie'
+import DicePool from '../dicepool'
 
 let challenge = new ChallengeDie
 let characteristic = new CharacteristicDie
@@ -16,6 +17,9 @@ var DicePool = require('./dicepool')
 var pool = new DicePool([ ChallengeDie, CharacteristicDie, ConservativeDie, 
     FortuneDie, MisfortuneDie, RecklessDie, ExpertiseDie ])
 */
+let pool = new DicePool([
+    challenge
+])
 
 console.log('challenge die roll:', challenge.roll())
 console.log('characteristic die roll:', characteristic.roll())
@@ -26,5 +30,6 @@ console.log('reckless die roll:', RecklessDie.roll())
 console.log('fortune die roll:', FortuneDie.roll())
 console.log('misfortune die roll:', MisfortuneDie.roll())
 console.log('expertise die roll:', ExpertiseDie.roll())
-console.log('rolling dice pool:', pool.roll())
 */
+console.log('rolling dice pool:', pool.roll())
+console.log(DicePool.success.toString())
