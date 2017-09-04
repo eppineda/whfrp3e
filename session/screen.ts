@@ -12,7 +12,6 @@ export interface GameStatistics {
 export class Panel {
     _screen:Screen
     _title:string
-    _position:string
     _information:GameStatistics
     _render:Function
     _shared:boolean
@@ -21,14 +20,13 @@ export class Panel {
         this._screen = screen
         this._title = title
         this._information = information
-        this._position = this._screen.attach(this)
+        this._screen.attach(this)
         this._render = this._information.render
         this._shared = false // true to allow others to view
         this._minimized = false // true when the info is not presented on-screen
     }
     get title() { return this._title }
     set title(t) { this._title = t }
-    get position() { return this._position }
     set shared(flag) { this._shared = flag }
     get minimized() { return this._minimized }
     minimize() { this._minimized = true } // todo: tell screen to rearrange
@@ -48,15 +46,15 @@ export class Screen {
     }
     get layouts():string[] { return Object.keys(this._layouts) }
     render(templateName) { this._layouts[templateName].render(this._panels) }
-    attach(panel:Panel) {
+    attach(panel:Panel):string[] {
         this._panels.push(panel)
-        this._layouts = this._screenOrganizer.options(this._panels.map(function(p) {
+        this._layouts = this._screenOrganizer.options(this._panels.filter(function(p) {
             return !p.minimized
         }).length)
-        return this._layouts
+        return Object.keys(this._layouts)
     }
     rearrange():string[] {
-        this._layouts = this._screenOrganizer.options(this._panels.map(function(p) {
+        this._layouts = this._screenOrganizer.options(this._panels.filter(function(p) {
             return !p.minimized
         }).length)
         return Object.keys(this._layouts)
