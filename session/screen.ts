@@ -4,17 +4,16 @@
 
 // collection of related information, e.g. character sheet, party sheet, turn
 // tracking, et cetera
-export class Information {
-    render() {
-    }
-} // Information
+export interface GameStatistics {
+    render():void
+} // GameStatistics
 
 // models a panel of information, a subdivided area of the screen
 export class Panel {
     _screen
     _title
     _position
-    _information
+    _information:GameStatistics
     _render
     _shared
     _minimized
@@ -41,20 +40,20 @@ export class Panel {
 
 export class Screen {
     _panels
-    _arrangements
+    _layouts
     constructor() {
         this._panels = []
-        this._arrangements = {}
+        this._layouts = {}
     }
-    get arrangements() { return Object.keys(this._arrangements) }
-    render(templateName) { this._arrangements[templateName].render(this._panels) }
+    get layouts() { return Object.keys(this._layouts) }
+    render(templateName) { this._layouts[templateName].render(this._panels) }
     attach(panel, ScreenOrganizer) {
         this._panels.push(panel)
-        this._arrangements =
+        this._layouts =
         ScreenOrganizer.options(this._panels.map(function(p) {
             return !p.minimized
         }).length)
-        return this.arrangements
+        return this._layouts
     }
     minimize(panel) {
         panel.minimize()
@@ -65,14 +64,8 @@ export class Screen {
  * organizes a collection of visible panels into a grid layout
  * subclass for each possible layout
  */
-export class Arrangement {
-    _name
-    _template
-    constructor(name, template) {
-        this._name = name
-        this._template = template
-    }
-    get name() { return this._name }
-    render(panels) {
-    }
-} // Arrangement
+export interface Layout {
+    _name:String
+    _template:String
+    render(panels:Object[]):void
+} // Layout
