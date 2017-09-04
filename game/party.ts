@@ -4,9 +4,11 @@
 
 export default class Party {
     _name
-    _fortune
     _players
-    constructor(players) {
+    _fortune
+    _stance
+    constructor(name, players) {
+        this._name = name
         this._players = players
         this._fortune = 0
     }
@@ -19,4 +21,5 @@ export default class Party {
         if (1 > this._fortune) return // already at 0
         return --this._fortune
     }
+    set stance(s) { this._stance = s }
 }
