@@ -31,8 +31,8 @@ export default class DicePool {
         var comets = outcome.comets
         var delays = outcome.delays
 
-        for (let d in this._dice) {
-            var result = this._dice[d].roll()
+        for (let d of this._dice) {
+            var result = d.roll()
             var rgxResult = new RegExp(result.replace('+', ''))
 
             if (rgxResult.test(DicePool.success.toString()) && 'eagle' !== result) {
