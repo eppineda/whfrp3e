@@ -29,8 +29,14 @@ export class Panel {
     set title(t) { this._title = t }
     set shared(flag) { this._shared = flag }
     get minimized() { return this._minimized }
-    minimize() { this._minimized = true } // todo: tell screen to rearrange
-    restore() { this._minimized = false } // todo: tell screen to rearrange
+    minimize() {
+        this._minimized = true
+        this._screen.rearrange()
+    }
+    restore() {
+        this._minimized = false
+        this._screen.rearrange()
+    }
 } // Panel
 
 // the collection of all panels constitutes the entire "screen"
