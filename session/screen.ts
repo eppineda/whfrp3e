@@ -55,8 +55,11 @@ export class Screen {
         }).length)
         return this._layouts
     }
-    minimize(panel:Panel) {
-        panel.minimize()
+    rearrange():string[] {
+        this._layouts = this._screenOrganizer.options(this._panels.map(function(p) {
+            return !p.minimized
+        }).length)
+        return Object.keys(this._layouts)
     }
 } // Screen
 
